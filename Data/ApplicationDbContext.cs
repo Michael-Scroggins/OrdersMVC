@@ -11,5 +11,7 @@ namespace LogisticsMVC.Data
         {
         }
         public DbSet<LogisticsMVC.Models.Product>? Product { get; set; }
+        public DbSet<LogisticsMVC.Models.Order>? Order { get; set; }
+        public DbSet<LogisticsMVC.Models.OrderItem>? OrderItem { get; set; }
     }
 }

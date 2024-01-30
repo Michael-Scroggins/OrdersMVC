@@ -3,7 +3,7 @@
 namespace LogisticsMVC.Models
 {
 
-    public enum OrderType
+    public enum Type
     {
         Pick,
         Store
@@ -14,7 +14,7 @@ namespace LogisticsMVC.Models
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
 
-        public OrderType Type { get; set; }
+        public Type OrderType { get; set; }
 
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
