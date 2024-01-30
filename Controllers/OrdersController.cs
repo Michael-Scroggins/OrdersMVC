@@ -48,6 +48,7 @@ namespace LogisticsMVC.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            ViewBag.OrderType = new SelectList(Enum.GetValues(typeof(Order.OrderTypes)));
             return View();
         }
 
