@@ -58,12 +58,15 @@ namespace LogisticsMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderID,OrderDate,OrderType")] Order order)
         {
+
+             
             if (ModelState.IsValid)
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.OrderTypes = new SelectList(Enum.GetValues(typeof(Order.OrderTypes)));
             return View(order);
         }
 
