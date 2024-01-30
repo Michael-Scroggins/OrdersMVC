@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LogisticsMVC.Models;
 
 namespace LogisticsMVC.Data
 {
@@ -9,5 +10,6 @@ namespace LogisticsMVC.Data
             : base(options)
         {
         }
+        public DbSet<LogisticsMVC.Models.Product>? Product { get; set; }
     }
 }
