@@ -1,5 +1,6 @@
 ﻿using LogisticsMVC.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LogisticsMVC.Controllers
 {
@@ -15,7 +16,8 @@ namespace LogisticsMVC.Controllers
 
         public async Task<ActionResult> Index()
         {
-            return View();
+            var orders = await _context.Order.Include(o => o.OrderItems).ThenInclude(oi => oi.Product).ToListAsync();
+            return View(orders);
         }
 
 
