@@ -66,7 +66,6 @@ namespace LogisticsMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.OrderTypes = new SelectList(Enum.GetValues(typeof(Order.OrderTypes)));
             return View(order);
         }
 
