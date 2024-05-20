@@ -20,6 +20,8 @@ namespace LogisticsMVC.Models
             Pick,
             Store
         }
+
+        public int OrderQuantity { get; set; }
     }
 
 }
