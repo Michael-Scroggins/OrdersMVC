@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LogisticsMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f135de302e3bc1624645e2376411bda9b8546b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbd7793d617deb8626ceb896565ef03607409851")]
 [assembly: System.Reflection.AssemblyProductAttribute("LogisticsMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LogisticsMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
