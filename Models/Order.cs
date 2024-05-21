@@ -9,6 +9,8 @@ namespace LogisticsMVC.Models
     {
 
         public int OrderID { get; set; }
+
+        public string OrderName { get; set; }
         public DateTime OrderDate { get; set; }
 
         public ICollection<Product> Products { get; set; }
