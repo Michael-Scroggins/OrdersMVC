@@ -12,8 +12,6 @@ namespace LogisticsMVC.Models
         public string ProductDescription { get; set; }
         [DisplayName("Product Quantity Stocked")]
         public int ProductQuantityInStock { get; set; }
-        [DisplayName("Product Price")]
-        public decimal ProductPrice { get; set; }
 
     }
 }
