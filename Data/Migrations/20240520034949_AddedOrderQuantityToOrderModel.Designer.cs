@@ -4,6 +4,7 @@ using LogisticsMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,13 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LogisticsMVC.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240520034949_AddedOrderQuantityToOrderModel")]
+    partial class AddedOrderQuantityToOrderModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.29")
+                .HasAnnotation("ProductVersion", "6.0.26")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -33,31 +35,41 @@ namespace LogisticsMVC.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("OrderQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderType")
+                        .HasColumnType("int");
+
                     b.HasKey("OrderID");
 
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("LogisticsMVC.Models.OrderTypes", b =>
+            modelBuilder.Entity("LogisticsMVC.Models.OrderItem", b =>
                 {
-                    b.Property<int>("OrderTypesId")
+                    b.Property<int>("OrderItemID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderTypesId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemID"), 1L, 1);
 
-                    b.Property<int?>("OrderID")
+                    b.Property<int>("OrderID")
                         .HasColumnType("int");
 
-                    b.Property<string>("OrderTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
 
-                    b.HasKey("OrderTypesId");
+                    b.Property<int>("QuantityInOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemID");
 
                     b.HasIndex("OrderID");
 
-                    b.ToTable("OrderTypes");
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("LogisticsMVC.Models.Product", b =>
@@ -68,9 +80,6 @@ namespace LogisticsMVC.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
-                    b.Property<int?>("OrderID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -79,12 +88,13 @@ namespace LogisticsMVC.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("ProductPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("ProductQuantityInStock")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("OrderID");
 
                     b.ToTable("Product");
                 });
@@ -291,18 +301,23 @@ namespace LogisticsMVC.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("LogisticsMVC.Models.OrderTypes", b =>
+            modelBuilder.Entity("LogisticsMVC.Models.OrderItem", b =>
                 {
-                    b.HasOne("LogisticsMVC.Models.Order", null)
-                        .WithMany("OrderType")
-                        .HasForeignKey("OrderID");
-                });
+                    b.HasOne("LogisticsMVC.Models.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("LogisticsMVC.Models.Product", b =>
-                {
-                    b.HasOne("LogisticsMVC.Models.Order", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderID");
+                    b.HasOne("LogisticsMVC.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,9 +373,7 @@ namespace LogisticsMVC.Data.Migrations
 
             modelBuilder.Entity("LogisticsMVC.Models.Order", b =>
                 {
-                    b.Navigation("OrderType");
-
-                    b.Navigation("Products");
+                    b.Navigation("OrderItems");
                 });
 #pragma warning restore 612, 618
         }

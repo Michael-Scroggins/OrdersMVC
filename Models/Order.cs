@@ -11,15 +11,11 @@ namespace LogisticsMVC.Models
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
 
-        public OrderTypes OrderType { get; set; }
+        public ICollection<Product> Products { get; set; }
 
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<OrderTypes> OrderType { get; set; }
 
-        public enum OrderTypes
-        {
-            Pick,
-            Store
-        }
+
     }
 
 }
