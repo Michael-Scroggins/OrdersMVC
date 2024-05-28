@@ -24,6 +24,16 @@ namespace LogisticsMVC.Data
                 context.Product.Add(p);
             }
             context.SaveChanges();
-        }
+
+
+            var orders = new Order[]
+            {
+                new Order{ OrderName="MSPick1"}, OrderDate=DateTime.Now, OrderTypes=
+           
+            }
+
+    
+
+    }
     }
 }

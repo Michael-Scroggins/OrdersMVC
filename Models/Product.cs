@@ -13,5 +13,7 @@ namespace LogisticsMVC.Models
         [DisplayName("Product Quantity Stocked")]
         public int ProductQuantityInStock { get; set; }
 
+        public ICollection<OrderProduct> OrderProducts { get; set; }
+
     }
 }

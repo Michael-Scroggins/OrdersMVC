@@ -10,7 +10,9 @@ namespace LogisticsMVC.Data
             : base(options)
         {
         }
-        public DbSet<LogisticsMVC.Models.Product>? Product { get; set; }
-        public DbSet<LogisticsMVC.Models.Order>? Order { get; set; }
+        public DbSet<LogisticsMVC.Models.Product> Product { get; set; }
+        public DbSet<LogisticsMVC.Models.Order> Order { get; set; }
+
+        public DbSet<LogisticsMVC.Models.Order> OrderProducts { get; set; }
     }
 }
