@@ -2,8 +2,11 @@
 
 namespace LogisticsMVC.Models
 {
-
-
+    public enum OrderTypes
+    {
+        Pick,
+        Store
+    }
 
     public class Order
     {

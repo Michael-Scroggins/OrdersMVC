@@ -28,10 +28,27 @@ namespace LogisticsMVC.Data
 
             var orders = new Order[]
             {
-                new Order{ OrderName="MSPick1"}, OrderDate=DateTime.Now, OrderTypes=
-           
-            }
+                new Order{ OrderName="MSStore1", OrderDate= DateTime.Now, OrderType = OrderTypes.Store },
+                new Order{ OrderName="MSPick1", OrderDate= DateTime.Now, OrderType = OrderTypes.Pick }
 
+            };
+
+            foreach (Order o in orders)
+            {
+                context.Order.Add(o);
+            }
+            context.SaveChanges();
+
+            var orderProducts = new OrderProduct[]
+            {
+                new OrderProduct {OrderId = orders[0].OrderID, ProductId = products[0].ProductId},
+                new OrderProduct {OrderId = orders[0].OrderID, ProductId = products[1].ProductId}
+            };
+
+            foreach (OrderProduct op in orderProducts)
+            {
+                context.OrderProducts.Add(op);
+            }
     
 
     }
