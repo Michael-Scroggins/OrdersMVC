@@ -45,9 +45,9 @@ namespace LogisticsMVC.Data
                 new OrderProduct {OrderId = orders[0].OrderID, ProductId = products[1].ProductId}
             };
 
-            foreach (OrderProduct op in orderProducts)
+            foreach (OrderProduct ops in orderProducts)
             {
-                context.OrderProducts.Add(op);
+                context.OrderProducts.Add(ops);
             }
     
 
