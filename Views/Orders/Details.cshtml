@@ -32,17 +32,6 @@
                     <th>Course Title</th>
                     <th>Grade</th>
                 </tr>
-                @foreach (var item in Model.OrderProducts)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductName)
-                        </td>
-                    </tr>
-                }
             </table>
         </dd>
     </dl>
