@@ -16,7 +16,7 @@ namespace LogisticsMVC.Models
         public string OrderName { get; set; }
         public DateTime OrderDate { get; set; }
 
-        public ICollection<Product> OrderProducts { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
         public OrderTypes OrderType { get; set; }
 
