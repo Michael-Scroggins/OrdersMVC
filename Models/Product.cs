@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace LogisticsMVC.Models
+namespace OrdersMVC.Models
 {
     public class Product
     {

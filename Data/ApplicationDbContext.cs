@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using LogisticsMVC.Models;
+using OrdersMVC.Models;
 
-namespace LogisticsMVC.Data
+namespace OrdersMVC.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -10,10 +10,10 @@ namespace LogisticsMVC.Data
             : base(options)
         {
         }
-        public DbSet<LogisticsMVC.Models.Product> Product { get; set; }
-        public DbSet<LogisticsMVC.Models.Order> Order { get; set; }
+        public DbSet<OrdersMVC.Models.Product> Product { get; set; }
+        public DbSet<OrdersMVC.Models.Order> Order { get; set; }
 
-        public DbSet<LogisticsMVC.Models.OrderProduct> OrderProducts { get; set; }
+        public DbSet<OrdersMVC.Models.OrderProduct> OrderProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

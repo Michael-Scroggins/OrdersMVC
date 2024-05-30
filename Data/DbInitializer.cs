@@ -1,6 +1,6 @@
-﻿using LogisticsMVC.Models;
+﻿using OrdersMVC.Models;
 
-namespace LogisticsMVC.Data
+namespace OrdersMVC.Data
 {
     public class DbInitializer
     {

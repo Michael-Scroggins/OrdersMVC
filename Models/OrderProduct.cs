@@ -1,4 +1,4 @@
-﻿namespace LogisticsMVC.Models
+﻿namespace OrdersMVC.Models
 {
     public class OrderProduct
     {

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LogisticsMVC.Data.Migrations
+namespace OrdersMVC.Data.Migrations
 {
     public partial class ResolvedOnModelCreatingInDBCOntext : Migration
     {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sTF9glc1WH3+xEp1ORAwycMbP5Z03/DGvT+0H0LerDAkwnkiMthjF34TwjLEdQON6qR2REYGdIDtxWy9cOxcgw==",
+  "dgSpecHash": "NZdrGvRcYR+BO/hCxNMALwNIDsakWCrk7gXtVtclFwcfD3cQO1TALTZ5Cb36RYugfuajLMBwbA4NBree40xI2w==",
   "success": true,
-  "projectFilePath": "M:\\Projects\\LogisticsMVC\\LogisticsMVC.csproj",
+  "projectFilePath": "M:\\Projects\\LogisticsMVC\\OrdersMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mike\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -11501,9 +11501,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "M:\\Projects\\LogisticsMVC\\LogisticsMVC.csproj",
-      "projectName": "LogisticsMVC",
-      "projectPath": "M:\\Projects\\LogisticsMVC\\LogisticsMVC.csproj",
+      "projectUniqueName": "M:\\Projects\\LogisticsMVC\\OrdersMVC.csproj",
+      "projectName": "OrdersMVC",
+      "projectPath": "M:\\Projects\\LogisticsMVC\\OrdersMVC.csproj",
       "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
       "outputPath": "M:\\Projects\\LogisticsMVC\\obj\\",
       "projectStyle": "PackageReference",

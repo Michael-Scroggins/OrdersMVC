@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "LogisticsMVC": {
+    "OrdersMVC": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

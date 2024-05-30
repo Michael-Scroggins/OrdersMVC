@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LogisticsMVC.Models
+namespace OrdersMVC.Models
 {
     public enum OrderTypes
     {

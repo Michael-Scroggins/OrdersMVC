@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LogisticsMVC.Data;
-using LogisticsMVC.Models;
+using OrdersMVC.Data;
+using OrdersMVC.Models;
 
-namespace LogisticsMVC.Controllers
+namespace OrdersMVC.Controllers
 {
     public class OrdersController : Controller
     {

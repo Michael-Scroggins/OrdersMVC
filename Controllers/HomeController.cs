@@ -1,8 +1,8 @@
-﻿using LogisticsMVC.Models;
+﻿using OrdersMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace LogisticsMVC.Controllers
+namespace OrdersMVC.Controllers
 {
     public class HomeController : Controller
     {
