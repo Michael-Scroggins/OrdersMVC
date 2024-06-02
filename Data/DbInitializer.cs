@@ -49,6 +49,7 @@ namespace OrdersMVC.Data
             {
                 context.OrderProducts.Add(ops);
             }
+            context.SaveChanges();
     
 
     }
