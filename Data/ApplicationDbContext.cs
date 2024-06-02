@@ -10,10 +10,10 @@ namespace OrdersMVC.Data
             : base(options)
         {
         }
-        public DbSet<OrdersMVC.Models.Product> Product { get; set; }
-        public DbSet<OrdersMVC.Models.Order> Order { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Order> Order { get; set; }
 
-        public DbSet<OrdersMVC.Models.OrderProduct> OrderProducts { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
