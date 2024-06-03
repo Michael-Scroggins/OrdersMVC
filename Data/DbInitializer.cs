@@ -1,4 +1,5 @@
-﻿using OrdersMVC.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using OrdersMVC.Models;
 
 namespace OrdersMVC.Data
 {
@@ -6,7 +7,7 @@ namespace OrdersMVC.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
-            context.Database.EnsureCreated();
+            context.Database.Migrate();
 
             if (context.Product.Any())
             {
@@ -15,8 +16,8 @@ namespace OrdersMVC.Data
 
             var products = new Product[]
             {
-                new Product{ProductId=1,ProductName="Boards",ProductDescription="Description for Boards",ProductQuantityInStock=10},
-                new Product{ProductId=2,ProductName="Screws",ProductDescription="Description for Screws",ProductQuantityInStock=150}
+                new Product{ProductName="Boards",ProductDescription="Description for Boards",ProductQuantityInStock=10},
+                new Product{ProductName="Screws",ProductDescription="Description for Screws",ProductQuantityInStock=150}
             };
 
             foreach (Product p in products)
