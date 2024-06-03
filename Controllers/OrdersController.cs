@@ -36,7 +36,10 @@ namespace OrdersMVC.Controllers
             }
 
             var order = await _context.Order
-                .FirstOrDefaultAsync(m => m.OrderID == id);
+                .Include(o => o.OrderProducts)
+                    .ThenInclude(op => op.Product)
+                 .FirstOrDefaultAsync(m => m.OrderID == id);
+          
             if (order == null)
             {
                 return NotFound();

@@ -23,18 +23,54 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderProducts)
-        </dt>
-        <dd class="col-sm-10">
-            <table class="table">
-                <tr>
-                    <th>Course Title</th>
-                    <th>Grade</th>
-                </tr>
-            </table>
-        </dd>
     </dl>
+</div>
+<div>
+    <h4>Products in this Order</h4>
+    @if (Model.OrderProducts != null && Model.OrderProducts.Any())
+    {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderProducts.FirstOrDefault().Product.ProductId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderProducts.FirstOrDefault().Product.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderProducts.FirstOrDefault().Product.ProductDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderProducts.FirstOrDefault().Product.ProductQuantityInStock)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderProducts)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductQuantityInStock)
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No products found for this order.</p>
+    }
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.OrderID">Edit</a> |
